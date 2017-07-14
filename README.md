@@ -1,5 +1,6 @@
 # zelda2
 
-Clone of NES Zelda 2
+Clone of NES Zelda 2.
 
-~ Team 10
+~ Team 10 NHSGA
+
