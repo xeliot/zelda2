@@ -90,7 +90,6 @@ public class LoadLevel : MonoBehaviour {
 			StaticPlayer.spawnPosition =  Vector3.forward;
 			break;
 		}
-		Debug.Log (StaticPlayer.spawnPosition);
 		if (this.GetComponent<AudioSource>() != null && (levelToLoad == "MapOuter" || levelToLoad == "MapInner")) {
 			StaticPlayer.worldTime = Time.time;
 			StaticPlayer.musicTime = this.GetComponent<AudioSource> ().time;
@@ -109,7 +108,6 @@ public class LoadLevel : MonoBehaviour {
 	void Awake ()
 	{
 		if (this.GetComponent<AudioSource> () != null) {
-			Debug.Log ("play");
 			this.GetComponent<AudioSource> ().time = (Time.time - StaticPlayer.worldTime + StaticPlayer.musicTime) % this.GetComponent<AudioSource> ().clip.length;
 
 			this.GetComponent<AudioSource> ().Play ();

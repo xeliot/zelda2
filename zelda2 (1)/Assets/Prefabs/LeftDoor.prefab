@@ -78,10 +78,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864f1ad7bb50e2b498f506ec35a64c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Map
+  levelToLoad: PlanetaryMap
   waitTime: 0
   tagToCheck: Player
+  Type: 0
+  hardPosition: {x: 0, y: 0, z: 0}
+  radius: 0
   isInteractable: 1
+  enter: 1
 --- !u!212 &212616237157273380
 SpriteRenderer:
   m_ObjectHideFlags: 1

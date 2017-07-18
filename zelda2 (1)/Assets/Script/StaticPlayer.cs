@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class StaticPlayer : object {
 	public static Vector3 spawnPosition = Vector3.forward;
-	private static float health;
+	private static float health = Config.MAX_HEALTH;
 	private static float magic;
 	private static float exp;
 	public static float nextExp;

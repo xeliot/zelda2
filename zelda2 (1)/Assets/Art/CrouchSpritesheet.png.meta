@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 942946d00acf448c99f371748762e5a1
-timeCreated: 1500265665
+timeCreated: 1500324802
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -17,6 +17,10 @@ TextureImporter:
     21300020: CrouchSpritesheet_10
     21300022: CrouchSpritesheet_11
     21300024: CrouchSpritesheet_12
+    21300026: CrouchSpritesheet_13
+    21300028: CrouchSpritesheet_14
+    21300030: CrouchSpritesheet_15
+    21300032: CrouchSpritesheet_16
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -86,10 +90,10 @@ TextureImporter:
       name: CrouchSpritesheet_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 739
-        width: 150
-        height: 241
+        x: 0
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -99,10 +103,10 @@ TextureImporter:
       name: CrouchSpritesheet_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 739
-        width: 152
-        height: 241
+        x: 211
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,10 +116,10 @@ TextureImporter:
       name: CrouchSpritesheet_2
       rect:
         serializedVersion: 2
-        x: 322
-        y: 739
-        width: 149
-        height: 241
+        x: 422
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,10 +129,10 @@ TextureImporter:
       name: CrouchSpritesheet_3
       rect:
         serializedVersion: 2
-        x: 479
-        y: 747
-        width: 150
-        height: 233
+        x: 633
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,10 +142,10 @@ TextureImporter:
       name: CrouchSpritesheet_4
       rect:
         serializedVersion: 2
-        x: 636
-        y: 758
-        width: 150
-        height: 223
+        x: 844
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +155,10 @@ TextureImporter:
       name: CrouchSpritesheet_5
       rect:
         serializedVersion: 2
-        x: 794
-        y: 775
-        width: 149
-        height: 206
+        x: 1055
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,10 +168,10 @@ TextureImporter:
       name: CrouchSpritesheet_6
       rect:
         serializedVersion: 2
-        x: 7
-        y: 552
-        width: 150
-        height: 179
+        x: 1266
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +181,10 @@ TextureImporter:
       name: CrouchSpritesheet_7
       rect:
         serializedVersion: 2
-        x: 164
-        y: 568
-        width: 152
-        height: 164
+        x: 1477
+        y: 1719
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +194,10 @@ TextureImporter:
       name: CrouchSpritesheet_8
       rect:
         serializedVersion: 2
-        x: 322
-        y: 568
-        width: 150
-        height: 164
+        x: 0
+        y: 1390
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +207,10 @@ TextureImporter:
       name: CrouchSpritesheet_9
       rect:
         serializedVersion: 2
-        x: 479
-        y: 568
-        width: 150
-        height: 162
+        x: 211
+        y: 1390
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +220,10 @@ TextureImporter:
       name: CrouchSpritesheet_10
       rect:
         serializedVersion: 2
-        x: 636
-        y: 569
-        width: 152
-        height: 162
+        x: 422
+        y: 1390
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,10 +233,10 @@ TextureImporter:
       name: CrouchSpritesheet_11
       rect:
         serializedVersion: 2
-        x: 794
-        y: 568
-        width: 150
-        height: 162
+        x: 633
+        y: 1390
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +246,49 @@ TextureImporter:
       name: CrouchSpritesheet_12
       rect:
         serializedVersion: 2
-        x: 7
-        y: 382
-        width: 150
-        height: 163
+        x: 844
+        y: 1390
+        width: 211
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CrouchSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1390
+        width: 211
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CrouchSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1390
+        width: 211
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CrouchSpritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 1390
+        width: 211
+        height: 329
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -15,9 +15,7 @@ public class Bullet : MonoBehaviour {
 	}
 		
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log ("stuff happened.");
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Enemy")) {
-			Debug.Log ("hit enemy");
 			DestroyObject (other.gameObject);
 		}
 	}

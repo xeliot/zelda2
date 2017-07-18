@@ -8,6 +8,7 @@ public class Config : MonoBehaviour {
 	public static string VERTICAL_INPUT = "Vertical";
 	public static float COLLISON_CHECK_DISTANCE = 1F;
 
+	public static float MAX_HEALTH = 5F;
 
 	public static Vector2 ConvertV3ToV2(Vector3 v3)
 	{

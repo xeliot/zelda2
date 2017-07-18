@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Map_Movement : MonoBehaviour {
-
+	/*
 	enum moveDir{Left,Right,Up,Down,
 				UpRight,UpLeft,DownRight,DownLeft,
 				None}
 
 	private moveDir _moveDirection;
-
+*/
 	private string _inputAxisH = Config.HORIZONTAL_INPUT;
 	private string _inputAxisV = Config.VERTICAL_INPUT;
 
@@ -25,7 +25,7 @@ public class Map_Movement : MonoBehaviour {
 		if (StaticPlayer.spawnPosition.z == 0) {
 			this.transform.position = StaticPlayer.spawnPosition;
 		}
-		_moveDirection = moveDir.None;	
+		//_moveDirection = moveDir.None;	
 		_rb = GetComponent<Rigidbody2D> ();
 	}
 	
@@ -37,11 +37,13 @@ public class Map_Movement : MonoBehaviour {
 		float inputV = Input.GetAxis (_inputAxisV);
 
 		//Get move direction from all that
-		_moveDirection = getMoveDirFromInput (inputH, inputV);
+		//_moveDirection = getMoveDirFromInput (inputH, inputV);
 
 		_rb.velocity = new Vector2(inputH,inputV) * _movementSpeed;
+		float zTheta = Mathf.Atan2 (_rb.velocity.y, _rb.velocity.x);
+		this.transform.rotation = Quaternion.Lerp(Quaternion.Euler (0, 0, 180 / Mathf.PI * (zTheta - Mathf.PI/2)), this.transform.rotation, 0.5f);
 	}
-
+	/*
 	moveDir getMoveDirFromInput(float inputH, float inputV)
 	{
 		// Return a move Direction based on what the inputs are
@@ -82,5 +84,5 @@ public class Map_Movement : MonoBehaviour {
 				return moveDir.None;
 			}
 		}
-	}
+	}*/
 }

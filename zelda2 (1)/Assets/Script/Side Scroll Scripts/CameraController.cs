@@ -6,7 +6,8 @@ public class CameraController : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject player;
-
+	[SerializeField]
+	private float _offset = 2.3f;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,6 +15,6 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y + 2.3f, -10.0f);
+		transform.position = new Vector3 (player.transform.position.x, player.transform.position.y + _offset, -10.0f);
 	}
 }
