@@ -21,7 +21,6 @@ public class Map_EnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-
 	}
 	
 	// Update is called once per frame
@@ -42,7 +41,7 @@ public class Map_EnemyController : MonoBehaviour {
 					isOk = true;
 				}
 			}
-			GameObject newEnemy = Instantiate (_enemys [Random.Range (0, _enemys.Length)], tempPos * _range, Quaternion.identity);
+			Instantiate (_enemys [Random.Range (0, _enemys.Length)], tempPos * _range, Quaternion.identity);
 			_curEnemy++;
 		}
 	}

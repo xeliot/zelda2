@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864f1ad7bb50e2b498f506ec35a64c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: MapOuter
+  levelToLoad: PlanetaryMap
   waitTime: 0
   tagToCheck: Player
   Type: 0

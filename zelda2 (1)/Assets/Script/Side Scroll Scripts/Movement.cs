@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
+	private Vector3 shieldPos;
+	[SerializeField]
+	private Sprite Idle;
+	[SerializeField]
+	private Sprite Crouch;
 
 	private Rigidbody2D _mRigidBody;
-
+	[SerializeField]
+	private GameObject shield;
 	[SerializeField]
 	private float _moveSpeed;
 
 	private bool _facingRight = true;
 
-	private int _playerJumpPower = 350;
+	private int _playerJumpPower = 400;
 
 	[SerializeField]
 	private GameObject _projectilePrefab;
@@ -22,6 +28,10 @@ public class Movement : MonoBehaviour {
 	private float projectileVelocity = 10;
 	private bool bulletMovingRight = true;
 
+	private Animator _animator;
+
+	private PlayerHealthHandler healthHandler;
+
 	[SerializeField]
 	private GameObject camera;
 
@@ -29,11 +39,15 @@ public class Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		shieldPos = new Vector3 (shield.transform.localPosition.x, 0.56f, 0);
 		if (StaticPlayer.spawnPosition.z == 0) {
 			this.transform.position = StaticPlayer.spawnPosition;
 		}
 		_mRigidBody = GetComponent<Rigidbody2D> ();
 		_moveSpeed = 5f;
+		_animator = GetComponent<Animator> ();
+		_animator.SetBool ("isCrouching", false);
+		healthHandler = GetComponent<PlayerHealthHandler> ();
 
 	}
 	// Update is called once per frame
@@ -41,8 +55,10 @@ public class Movement : MonoBehaviour {
 	{
 		if (!isEnabled)
 			return;
-		float horizontal = Input.GetAxis ("Horizontal");
-
+		float horizontal = 0;
+		if (_animator.GetCurrentAnimatorStateInfo (0).IsName ("Idle") || _animator.GetCurrentAnimatorStateInfo (0).IsName ("Stand Up")) {
+			horizontal = Input.GetAxis ("Horizontal");
+		}
 
 		if (horizontal < 0.0f && _facingRight == true) {	
 			FlipPlayer ();
@@ -50,15 +66,31 @@ public class Movement : MonoBehaviour {
 			FlipPlayer ();
 		}
 
-		if (Input.GetKeyDown ("w") && _mRigidBody.velocity.y == 0) {
+		if ((Input.GetKeyDown ("w") || Input.GetKeyDown(KeyCode.UpArrow)) && _mRigidBody.velocity.y == 0) {
 			Jump ();
 		}
+		if ((Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _mRigidBody.velocity.y == 0) {
+			_animator.SetBool ("isCrouching", true);
+			shieldPos = /*Vector3.Lerp(shield.transform.localPosition, */new Vector3(shield.transform.localPosition.x, -0.925f, 0)/*, 0.5f)*/;
+			//_animator.Play("Crouch");
+			Debug.Log ("pressing ss");
+		}
+		if ((Input.GetKeyUp (KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) || _mRigidBody.velocity.y != 0) {
+			_animator.SetBool ("isCrouching", false);
+			shieldPos = /*Vector3.Lerp(shield.transform.localPosition, */new Vector3 (shield.transform.localPosition.x, 0.56f, 0) /*, 0.5f)*/;
+			//_animator.Play("Crouch");
+		}
+		shield.transform.localPosition = Vector3.Lerp (shield.transform.localPosition, shieldPos, 0.15f);
 
-		if (_projectiles.Count == 0) {
+		if (_projectiles.Count == 0 /*&& (_animator.GetCurrentAnimatorStateInfo (0).IsName ("Idle") ||_animator.GetCurrentAnimatorStateInfo (0).IsName ("Crouch")) */) {
 			if (Input.GetKeyDown ("space")) {
 				GameObject bullet = (GameObject)Instantiate (_projectilePrefab, transform.position, Quaternion.identity);
 				if (!_facingRight) {
 					bullet.transform.localScale = new Vector3(bullet.transform.localScale.x * -1f, bullet.transform.localScale.y, bullet.transform.localScale.z);
+				}
+				//we are crouching so lower the bullet
+				if (_animator.GetCurrentAnimatorStateInfo (0).IsName ("Crouch")) {
+					bullet.transform.position += new Vector3 (0, -0.7f, 0);
 				}
 				_projectiles.Add (bullet);
 				_bulletCounter.Add (1);
@@ -76,13 +108,6 @@ public class Movement : MonoBehaviour {
 			GameObject currentBullet = _projectiles [i];
 			if (currentBullet != null) {
 				_bulletCounter [i] += 1;
-				/*
-				if (_facingRight) {
-					currentBullet.transform.Translate (new Vector3 (1, 0) * Time.deltaTime * projectileVelocity);
-				} else {
-					currentBullet.transform.Translate (new Vector3 (-1, 0) * Time.deltaTime * projectileVelocity);
-				}
-				*/
 				if (bulletMovingRight) {
 					currentBullet.transform.Translate (new Vector3 (1, 0) * Time.deltaTime * projectileVelocity);
 				} else {
@@ -117,10 +142,11 @@ public class Movement : MonoBehaviour {
 		_mRigidBody.velocity = new Vector2 (horizontal*_moveSpeed, _mRigidBody.velocity.y);
 	}
 
-	void OnTriggerEnter(Collider other) {	
-		Debug.Log ("trigger1");
-		if (other.gameObject.layer == LayerMask.NameToLayer ("platform")) {
-			Debug.Log ("trigger");
+	void OnCollisionEnter2D (Collision2D col){
+		if (col.gameObject.layer == LayerMask.NameToLayer ("Enemy")) {
+			healthHandler.takeDamage (0.5f);
+			Debug.Log (StaticPlayer.getHealth ());
 		}
 	}
+
 }

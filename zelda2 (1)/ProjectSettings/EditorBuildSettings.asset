@@ -5,15 +5,42 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 92e8d189eadc58a429ca392965c2f7b4
   - enabled: 1
-    path: Assets/Scenes/Map.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2bba6e4bd6ae57347bd14dc8f90cbe45
+  - enabled: 0
+    path: 
     guid: 92e8d189eadc58a429ca392965c2f7b4
   - enabled: 1
     path: Assets/Scenes/OpeningScene.unity
     guid: cd2974b97c3294dedb7e3ab9b16bbb74
   - enabled: 1
-    path: Assets/Scenes/MapInner.unity
+    path: Assets/Scenes/SpaceScenes/PlanetaryMap.unity
     guid: e702246521528ef47b4ed36a9c7e580e
   - enabled: 1
-    path: Assets/Scenes/MapOuter.unity
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/SpaceScenes/GalaxyMap.unity
+    guid: 906ad6dd2d0fae3419ae3f6922e6f090
+  - enabled: 1
+    path: Assets/Scenes/EnemyScenes/EnemyScene.unity
+    guid: 68ec7024c97c94b7c9ef411e56f83ca2
+  - enabled: 1
+    path: Assets/Scenes/EnemyScenes/Cave.unity
+    guid: f03b635b2b0e742d4a47222d71d36c3a
+  - enabled: 1
+    path: Assets/Scenes/Towns/TownTest.unity
+    guid: 093adbaab859dc745b272a0912687636
+  - enabled: 1
+    path: Assets/Scenes/SpaceScenes/PlanetaryMap.unity
+    guid: e702246521528ef47b4ed36a9c7e580e
+  - enabled: 1
+    path: Assets/Scenes/SpaceScenes/GalaxyMap.unity
+    guid: 906ad6dd2d0fae3419ae3f6922e6f090
+  - enabled: 1
+    path: Assets/Scenes/EnemyScenes/Cave.unity
+    guid: f03b635b2b0e742d4a47222d71d36c3a
+  - enabled: 1
+    path: Assets/Scenes/Towns/TownTest.unity
+    guid: 093adbaab859dc745b272a0912687636

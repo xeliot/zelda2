@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50591394959899890}
   - component: {fileID: 61700329812506342}
   - component: {fileID: 114792609558104260}
+  - component: {fileID: 114347301643583604}
   m_Layer: 11
   m_Name: Bloob
   m_TagString: Untagged
@@ -36,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283888348031854}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9, y: -2.12, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.06, y: -3.6896195, z: 0}
   m_LocalScale: {x: 0.7275736, y: 0.7275736, z: 0.7275736}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,6 +89,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.95, y: 1.21}
   m_EdgeRadius: 0
+--- !u!114 &114347301643583604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283888348031854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b31689ca47930429e7a6cb6cdc265d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveType: 0
+  isMovingLeft: 0
+  _moveSpeed: 3
+  _timeBetweenSwitch: 2
 --- !u!114 &114792609558104260
 MonoBehaviour:
   m_ObjectHideFlags: 1

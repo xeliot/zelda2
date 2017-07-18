@@ -12,8 +12,7 @@ public class DialougeNode
 	[TextArea]
 	public string Dialouge;
 	[Header("Who is talking?")]
-	[SerializeField]
-	private string npcName;
+	public string npcName;
 
 	public Sprite npcImage;
 }
@@ -31,13 +30,19 @@ public class Dialouge : MonoBehaviour
 	private Text SubtitleText;
 
 	[SerializeField]
-	private GameObject npcName;
+	private Text npcName;
 	[SerializeField]
 	private GameObject PlayerHud;
-	[SerializeField]
-	private Image NPCImage;
+//	[SerializeField]
+//	private Image NPCImage;
 	[SerializeField]
 	private Movement M;
+
+	void Start()
+	{
+		SubtitleHub = GameObject.Find ("ChatUI");
+		PlayerHud = GameObject.Find ("MainUI");
+	}
 
 	void Update ()
 	{
@@ -66,7 +71,8 @@ public class Dialouge : MonoBehaviour
 	void updateDialouge()
 	{
 		SubtitleText.text = dNode [lineNum].Dialouge;
-		NPCImage.sprite = dNode [lineNum].npcImage;
+		//NPCImage.sprite = dNode [lineNum].npcImage;
+		npcName.text = dNode [lineNum].npcName;
 	}
 	public void ChangeDialouge(List<DialougeNode> NewNodes)
 	{

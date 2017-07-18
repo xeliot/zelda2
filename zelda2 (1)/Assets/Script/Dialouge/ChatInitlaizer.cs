@@ -12,14 +12,29 @@ public class ChatInitlaizer : MonoBehaviour {
 	private bool canChat;
 	[SerializeField]
 	private List<DialougeNode> dNodes;
-	
+
+	private bool triggered;
+
 	void OnTriggerEnter2D (Collider2D Col) 
 	{
 		if(Col.tag == "Player" && canChat == true)
 		{
+			triggered = true;
+		}
+	}
+	void OnTriggerExit2D(Collider2D col)
+	{
+		if(col.tag == "Player" && canChat == true)
+		{
+			triggered = false;
+		}
+	}
+
+	void Update()
+	{
+		if (Input.GetButtonDown ("Submit") && triggered == true) {
 			dialouge.ChangeDialouge (dNodes);
-			if (!isRepeatable) 
-			{
+			if (!isRepeatable) {
 				canChat = false;
 			} 
 		}
